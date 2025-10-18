@@ -28,7 +28,7 @@ public class ItemRestController {
         return "hello from rest controller";
     }
 
-    @RequestMapping("")
+    @GetMapping("")
     public List<Item> getAllItems(){
         return itemService.getItems();
     }
@@ -40,11 +40,12 @@ public class ItemRestController {
         return itemService.create(item);
     }
 
-    @RequestMapping("{id}")
+    @GetMapping("{id}")
     public Item getAOneItem(@PathVariable String id){
         return itemService.getItem(id);
     }
-        @DeleteMapping("{id}")
+
+     @DeleteMapping("{id}")
     public void deleteAOneItem(@PathVariable String id){
         itemService.delete(id);
     }

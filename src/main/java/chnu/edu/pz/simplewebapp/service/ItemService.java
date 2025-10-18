@@ -58,6 +58,9 @@ public class ItemService {
     }
 
     public Item update(Item item) {
+        if (item.getId() == null) {
+            return null;
+        }
         return itemRepository.save(item);
     }
 }
